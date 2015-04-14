@@ -16,6 +16,23 @@ var bio = {
 	"biopic": "images/fry.jpg"
 }
 
+if (bio.skills.length > 0) {
+
+	$("#header").append(HTMLskillsStart);
+
+	
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+	
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skills").append(formattedSkill);
+}
 
 var work = {
 	
@@ -43,6 +60,25 @@ var work = {
 		}
 	]
 }
+
+function displayWork () {
+	for (job in work.jobs) {
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+		$("#workExperience").append(HTMLworkStart);
+		$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formattedDescription);
+	};
+}
+
+displayWork();
 
 
 var projects = {
