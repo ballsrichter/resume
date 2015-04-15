@@ -27,10 +27,10 @@ if (bio.skills.length > 0) {
 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
 	$("#skills").append(formattedSkill);
 	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 	$("#skills").append(formattedSkill);
 	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
 	$("#skills").append(formattedSkill);
 }
 
@@ -146,3 +146,5 @@ var education = {
         }
     ]
 }
+
+$("#main").append(internationalizeButton);
