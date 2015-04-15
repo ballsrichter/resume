@@ -16,6 +16,26 @@ var bio = {
 	"biopic": "images/fry.jpg"
 }
 
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile"]);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github"]);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").append(formattedPic);
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedGithub);
+$("#topContacts").append(formattedTwitter);
+$("#topContacts").append(formattedLocation);
+
+
+
 if (bio.skills.length > 0) {
 
 	$("#header").append(HTMLskillsStart);
@@ -61,7 +81,7 @@ var work = {
 	]
 }
 
-function displayWork () {
+work.display = function() {
 	for (job in work.jobs) {
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -78,7 +98,17 @@ function displayWork () {
 	};
 }
 
-displayWork();
+work.display();
+
+/*function locationizer(work_obj) {
+	var locationArray = [];
+
+	for (job in work_obj.jobs) {
+		var newLocation = work_obj.jobs[job].location;
+		locationArray.push(newLocation);
+	}
+	return locationArray;
+}*/
 
 
 var projects = {
@@ -90,10 +120,9 @@ var projects = {
 			"url": "http://www.dankwatch.com",
 			"description": "This website was custom built as a private site for an artist to display his artwork. The design was created with simplicity in mind and is powered using only HTML and CSS. This website will be getting renovated in the near-future.",
 			"images": [
-				"http://www.dankwatch.com/images/methodman.jpg",
-				"http://www.dankwatch.com/images/redman.jpg",
-				"http://www.dankwatch.com/images/granddaddypurps.jpg",
-				"http://www.dankwatch.com/images/shiznit.jpg"
+				"images/methodman.jpg",
+				"images/redman.jpg",
+				"images/granddaddypurps.jpg",
 			]
 		},
 		{
@@ -106,6 +135,27 @@ var projects = {
 	]
 }
 
+projects.display = function() {
+	for (project in projects.projects) {
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		
+		$("#projects").append(HTMLprojectStart);
+		$(".project-entry:last").append(formattedTitle);
+		$(".project-entry:last").append(formattedDates);
+		$(".project-entry:last").append(formattedDescription);
+
+		if (projects.projects[project].images.length > 0) {
+			for (item in (projects.projects[project].images)) {
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[item]);
+				$(".project-entry:last").append(formattedImage);
+			}
+		}
+	}
+}
+
+projects.display();
 
 var education = {
     
@@ -147,4 +197,4 @@ var education = {
     ]
 }
 
-$("#main").append(internationalizeButton);
+$("#mapDiv").append(googleMap);
