@@ -1,3 +1,31 @@
+$.breakpoint({
+        condition: function () {
+            return window.matchMedia('only screen and (min-width:560px)').matches;
+        },
+        first_enter: function () {
+            // Code will run the first time condition() is true.
+            // Here, you might create elements to use in
+            // your enter and exit methods.
+
+            $( "#name" ).after( "<br id=\"headerBreak\">" );
+        },
+        enter: function () {
+            // Code will run whenever condition() becomes true.
+
+            $( "#name" ).after( "<br id=\"headerBreak\">" );
+        },
+        exit: function () {
+            // Code will run whenever condition() becomes false
+            // (if it was previously true).
+            // This is where you revert the things you do in the
+            // enter method.
+
+            $( "#headerBreak" ).remove();
+        }
+	})
+
+console.log($.breakpoint.condition());
+
 var bio = {
 	
 	"name": "Andrew Williams",
@@ -38,16 +66,14 @@ bio.display = function () {
 The following code tests the size of the viewport and changes 
 the css properties of the #headerbreak element accordingly
 */
-
+	/*
 	$( window ).resize(function() {
 		var viewportWidth = $(window).width();
-		if (viewportWidth > 560) {
-			$("#headerBreak").css("display","none");
-		}
-		else {
-			$("#headerBreak").css("display","initial");
+		if (viewportWidth < 560) {
+			$( "#name" ).after( "<br>" );
 		};
 	});
+*/
 }
 
 bio.display();
