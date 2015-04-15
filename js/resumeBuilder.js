@@ -11,7 +11,7 @@ var bio = {
 	},
 	"welcomeMessage": "Welcoem to the website guy and other cool stuff.",
 	"skills": [
-		"HTML","CSS","Javascript","Bootstrap"
+		"HTML/CSS","Bootstrap","Javascript", "Web Design and Development"
 	],
 	"biopic": "images/fry.jpg"
 }
@@ -33,6 +33,21 @@ bio.display = function () {
 	$("#topContacts").append(formattedGithub);
 	$("#topContacts").append(formattedTwitter);
 	$("#topContacts").append(formattedLocation);
+
+/*
+The following code tests the size of the viewport and changes 
+the css properties of the #headerbreak element accordingly
+*/
+
+	$( window ).resize(function() {
+		var viewportWidth = $(window).width();
+		if (viewportWidth > 560) {
+			$("#headerBreak").css("display","none");
+		}
+		else {
+			$("#headerBreak").css("display","initial");
+		};
+	});
 }
 
 bio.display();
@@ -48,10 +63,10 @@ if (bio.skills.length > 0) {
 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
 	$("#skills").append(formattedSkill);
 	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
 	$("#skills").append(formattedSkill);
 	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 	$("#skills").append(formattedSkill);
 }
 
