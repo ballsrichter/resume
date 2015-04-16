@@ -1,0 +1,24 @@
+#headerRole {
+	color: white;
+}
+
+@media screen and (min-width: 560px) {
+	#headerBreak {
+		display: none;
+	};
+}
+
+@media screen and (max-width: 488px) {
+	.displayMobile {
+		display: block;
+		float: left;
+		width: 100%;
+		padding: 2px;
+	}
+	#contactInfo {
+		padding-left: 0px;
+	}
+	#topContacts {
+		padding-left: 0px;
+	}
+

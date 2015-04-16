@@ -33,21 +33,6 @@ bio.display = function () {
 	$("#topContacts").append(formattedGithub);
 	$("#topContacts").append(formattedTwitter);
 	$("#topContacts").append(formattedLocation);
-
-/*
-The following code tests the size of the viewport and changes 
-the css properties of the #headerbreak element accordingly
-*/
-
-	$( window ).resize(function() {
-		var viewportWidth = $(window).width();
-		if (viewportWidth > 560) {
-			$("#headerBreak").css("display","none");
-		}
-		else {
-			$("#headerBreak").css("display","initial");
-		};
-	});
 }
 
 bio.display();
