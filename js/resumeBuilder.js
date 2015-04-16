@@ -184,14 +184,14 @@ var education = {
 education.display = function () {
 	for (school in education.schools) {
 		var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-		var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree)
+		var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var schoolHeader = schoolName + schoolDegree;
 		var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		
 
 		$("#education").append(HTMLschoolStart);
-		$(".education-entry:last").append(schoolName);
-		$(".education-entry:last").append(schoolDegree);
+		$(".education-entry:last").append(schoolHeader);
 		$(".education-entry:last").append(schoolDates);
 		$(".education-entry:last").append(schoolLocation);
 		
