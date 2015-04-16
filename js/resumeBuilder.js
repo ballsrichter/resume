@@ -145,12 +145,13 @@ var education = {
     "schools": [
         {
             "name": "New College of Florida",
+            "degree": "Bachelor of the Arts",
             "location": "Sarasota",
             "major": [
                 "Natural Sciences"
             ],
             "minor": [],
-            "graduation": "2013",
+            "dates": "August 2008 - December 2013",
             "url": "http://www.ncf.edu"
         }
     ],
@@ -183,24 +184,29 @@ var education = {
 education.display = function () {
 	for (school in education.schools) {
 		var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree)
 		var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		
 
 		$("#education").append(HTMLschoolStart);
-		$(".education-entry").append(schoolName);
-		$(".education-entry").append(schoolLocation);
-		if () {
+		$(".education-entry:last").append(schoolName);
+		$(".education-entry:last").append(schoolDegree);
+		$(".education-entry:last").append(schoolDates);
+		$(".education-entry:last").append(schoolLocation);
+		
+		if (education.schools[school].major.length > 0) {
 			for (item in education.schools[school].major) {
 				var schoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major[item]);
-				$(".education-entry").append(schoolMajor);
+				$(".education-entry:last").append(schoolMajor);
 			}
+		}
+		if (education.schools[school].minor.length > 0) {
 			for (item in education.schools[school].minor) {
 				var schoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major[item]);
-				$(".education-entry").append(schoolMajor);
+				$(".education-entry:last").append(schoolMajor);
 			}
-		};		
-
+		}		
 	}
 }
 
