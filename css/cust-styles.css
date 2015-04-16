@@ -1,24 +1,26 @@
-#headerRole {
-	color: white;
+#header {
+	background-color: #35357A;
 }
+
+#headerRole {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	padding: 0;
+}
+
+.color-primary-0 { color: #35357A; }	/* Main Primary color */
+.color-primary-1 { color: #9595CE; }
+.color-primary-2 { color: #5F5FA1; }
+.color-primary-3 { color: #181851; }
+.color-primary-4 { color: #07072A; }
+.color-primary-5 { color: #E5DBCF; }
 
 @media screen and (min-width: 560px) {
 	#headerBreak {
 		display: none;
 	};
 }
-
-@media screen and (max-width: 488px) {
-	.displayMobile {
-		display: block;
-		float: left;
-		width: 100%;
-		padding: 2px;
-	}
-	#contactInfo {
-		padding-left: 0px;
-	}
-	#topContacts {
-		padding-left: 0px;
-	}
 

@@ -87,7 +87,7 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #5F5FA1;
   display: none;
 }
 
@@ -117,15 +117,6 @@ a {
 /* TODO: Replace with image later */
 #header {
   background-color: #484848;
-}
-
-.flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
 }
 
 .center-content {

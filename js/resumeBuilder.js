@@ -15,6 +15,7 @@ var bio = {
 	],
 	"biopic": "images/fry.jpg"
 }
+
 bio.display = function () {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -25,35 +26,26 @@ bio.display = function () {
 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
 
-	$("#header").prepend(formattedRole);
-	$("#header").prepend(formattedName);
+	$("#headerInfo").prepend(formattedRole);
+	$("#headerInfo").prepend(formattedName);
 	$("#header").append(formattedPic);
 	$("#topContacts").append(formattedMobile);
 	$("#topContacts").append(formattedEmail);
 	$("#topContacts").append(formattedGithub);
 	$("#topContacts").append(formattedTwitter);
 	$("#topContacts").append(formattedLocation);
+
+	if (bio.skills.length > 0) {
+		$("#header").append(HTMLskillsStart);
+		for (item in bio.skills) {
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[item]);
+			$("#skills").append(formattedSkill);
+		};
+	}
 }
 
 bio.display();
 
-if (bio.skills.length > 0) {
-
-	$("#header").append(HTMLskillsStart);
-
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
-}
 
 var work = {
 	
@@ -100,16 +92,6 @@ work.display = function() {
 }
 
 work.display();
-
-/*function locationizer(work_obj) {
-	var locationArray = [];
-
-	for (job in work_obj.jobs) {
-		var newLocation = work_obj.jobs[job].location;
-		locationArray.push(newLocation);
-	}
-	return locationArray;
-}*/
 
 
 var projects = {
@@ -163,11 +145,11 @@ var education = {
     "schools": [
         {
             "name": "New College of Florida",
-            "city": "Sarasota",
+            "location": "Sarasota",
             "major": [
                 "Natural Sciences"
             ],
-            "minor": "",
+            "minor": [],
             "graduation": "2013",
             "url": "http://www.ncf.edu"
         }
@@ -198,4 +180,30 @@ var education = {
     ]
 }
 
-$("#mapDiv").append(googleMap);
+education.display = function () {
+	for (school in education.schools) {
+		var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		
+
+		$("#education").append(HTMLschoolStart);
+		$(".education-entry").append(schoolName);
+		$(".education-entry").append(schoolLocation);
+		if () {
+			for (item in education.schools[school].major) {
+				var schoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major[item]);
+				$(".education-entry").append(schoolMajor);
+			}
+			for (item in education.schools[school].minor) {
+				var schoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major[item]);
+				$(".education-entry").append(schoolMajor);
+			}
+		};		
+
+	}
+}
+
+education.display();
+
+$("#mapDiv").append(googleMap)
