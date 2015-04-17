@@ -53,6 +53,7 @@ var work = {
 		{
 			"employer": "Microsoft",
 			"title": "Consumer Services Advisor",
+			"url": "http://www.microsoftstore.com",
 			"location": "Jacksonville, Florida",
 			"dates": "May 2014 - March 2015",
 			"description": "As a service advisor, my role was to conduct answer desk appointments with customers who were having technical issues to help determine the best course of action for rectifying those problems. While the job was largely customer service oriented, I was also responsible for repairing those devices that were checked in for extended diagnostics and advanced software repair. Other various responsibilities included imaging devices on the sales floor as well as those being used by employees, conducting personal training appointments in areas such as Office 2013, Windows 8.1, and other Microsoft products, and general sales as well."
@@ -60,6 +61,7 @@ var work = {
 		{
 			"employer": "Digital ER",
 			"title": "Assistant to the manager",
+			"url": "http://www.digitalerjax.com",
 			"location": "Jacksonville, Florida",
 			"dates": "January 2013 - June 2013",
 			"description": "This was a temporary job. I typically worked under no supervision for around 30 hours a week selling services and products to customers, repairing phone and computer hardware, and troubleshooting software issues."
@@ -67,6 +69,7 @@ var work = {
 		{
 			"employer": "Power & Pumps Inc.",
 			"title": "Part-time employee",
+			"url": "http://powerandpumps.com",
 			"location": "Jacksonville, Florida",
 			"dates": "June 2012 - July 2012",
 			"description": "employeePrimary duties included listing overstock / out-of-date items online for sale. Also worked on the company database and website, helping to make minor improvements in both, while gaining some experience with Transact-SQL, Microsoft SQL Server, and ASP."
@@ -76,7 +79,7 @@ var work = {
 
 work.display = function() {
 	for (job in work.jobs) {
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer).replace("#data#", work.jobs[job].url);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
@@ -111,7 +114,7 @@ var projects = {
 		{
 			"title": "Wave Slave Clothing",
 			"dates": "May 2015",
-			"url": "",
+			"url": "#",
 			"description": "Wave Slave Clothing is a clothing retailer specializing in surf and beach attire. Wave Slave Clothing tries to represent a lifestyle and as such, the website will reflect that style. This site is still in progress and will be launched during summer 2015.",
 			"images": []
 		}
@@ -120,7 +123,7 @@ var projects = {
 
 projects.display = function() {
 	for (project in projects.projects) {
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#data#", projects.projects[project].url);
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 		
@@ -161,7 +164,7 @@ var education = {
             "name": "Introduction to web design and development",
             "school": "Florida State College of Jacksonville",
             "dates": "Spring 2013",
-            "url": ""
+            "url": "http://www.fscj.edu"
         },
         {
             "name": "Responsive Web-Design Fundamentals",
@@ -179,7 +182,7 @@ var education = {
             "name": "Introduction to jQuery",
             "school": "Udacity",
             "dates": "April 2015",
-            "url": "https://www.udacity.com/course/ud804-nd"
+            "url": "https://www.udacity.com/course/intro-to-jquery--ud245"
         }
     ]
 }
@@ -211,13 +214,14 @@ education.display = function () {
 			}
 		}		
 	}
+
 	$("#education").append(HTMLonlineClasses);
 	for (course in education.onlineCourses) {
 		var onlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].name);
 		var onlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
 		var schoolTitle = onlineTitle + onlineSchool;
 		var onlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates); 
-		var onlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+		var onlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url).replace("#data#", education.onlineCourses[course].url)
 
 		$("#education").append(HTMLschoolStart);
 		$(".education-entry:last").append(schoolTitle);

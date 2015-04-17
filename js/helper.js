@@ -30,14 +30,14 @@ var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills"
 var HTMLskills = '<li class="col-xs-4"><span class="color-primary-5">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
+var HTMLworkEmployer = '<a href="#data#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a href="#data#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img class="img-responsive" src="%data%">';
@@ -53,7 +53,7 @@ var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<br><a href="#data#">%data%</a><hr class="styleHR">';
 
 var googleMap = '<div id="map"></div>';
 
