@@ -160,21 +160,24 @@ var education = {
         {
             "name": "Introduction to web design and development",
             "school": "Florida State College of Jacksonville",
-            "major": "",
             "dates": "Spring 2013",
             "url": ""
         },
         {
             "name": "Responsive Web-Design Fundamentals",
             "school": "Udacity",
-            "major": "Front-end Web Developer Nanodegree",
             "dates": "April 2015",
             "url": "https://www.udacity.com/course/ud893-nd"
         },
         {
             "name": "Javascript Basics",
             "school": "Udacity",
-            "major": "Front-end Web Developer Nanodegree",
+            "dates": "April 2015",
+            "url": "https://www.udacity.com/course/ud804-nd"
+        },
+        {
+            "name": "Introduction to jQuery",
+            "school": "Udacity",
             "dates": "April 2015",
             "url": "https://www.udacity.com/course/ud804-nd"
         }
@@ -207,6 +210,20 @@ education.display = function () {
 				$(".education-entry:last").append(schoolMajor);
 			}
 		}		
+	}
+	$("#education").append(HTMLonlineClasses);
+	for (course in education.onlineCourses) {
+		var onlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].name);
+		var onlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+		var schoolTitle = onlineTitle + onlineSchool;
+		var onlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates); 
+		var onlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+
+		$("#education").append(HTMLschoolStart);
+		$(".education-entry:last").append(schoolTitle);
+		$(".education-entry:last").append(onlineDates);
+		$(".education-entry:last").append(onlineURL);
+
 	}
 }
 
