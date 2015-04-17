@@ -2,13 +2,8 @@
 	background-color: #35357A;
 }
 
-#headerRole {
-	padding: 0;
-	margin: 0;
-}
-
-.container {
-	padding: 0;
+ul {
+	padding:0;
 }
 
 .color-primary-0 { color: #35357A; }	/* Main Primary color */
@@ -17,6 +12,25 @@
 .color-primary-3 { color: #181851; }
 .color-primary-4 { color: #07072A; }
 .color-primary-5 { color: #E5DBCF; }
+
+@media screen and (max-width: 480px) {
+	.container {
+		padding: 0;
+	}
+	#name {
+		font-size: 35px;
+		margin-bottom: 0px;
+		margin-top: 10px;
+	}
+	#headerRole {
+		margin-top:0px;
+		padding-top: 0px;
+		font-size: 15px;
+	}
+	#skills {
+		padding-top: 10px;
+	}
+}
 
 @media screen and (min-width: 560px) {
 	#headerBreak {

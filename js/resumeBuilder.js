@@ -11,7 +11,7 @@ var bio = {
 	},
 	"welcomeMessage": "Welcoem to the website guy and other cool stuff.",
 	"skills": [
-		"HTML/CSS","Bootstrap","Javascript", "Web Design and Development"
+		"HTML", "CSS", "Bootstrap","Javascript", "jQuery", "AJAX"
 	],
 	"biopic": "images/fry.jpg"
 }
