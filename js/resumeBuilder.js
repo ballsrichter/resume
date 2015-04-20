@@ -82,7 +82,7 @@ var work = {
 			"url": "http://powerandpumps.com",
 			"location": "Jacksonville, Florida",
 			"dates": "June 2012 - July 2012",
-			"description": "employeePrimary duties included listing overstock / out-of-date items online for sale. Also worked on the company database and website, helping to make minor improvements in both, while gaining some experience with Transact-SQL, Microsoft SQL Server, and ASP."
+			"description": "Primary duties included listing overstock / out-of-date items online for sale. Also worked on the company database and website, helping to make minor improvements in both, while gaining some experience with Transact-SQL, Microsoft SQL Server, and ASP."
 		}
 	]
 }
