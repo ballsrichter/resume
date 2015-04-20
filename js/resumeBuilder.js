@@ -16,35 +16,45 @@ var bio = {
 	"biopic": "images/me2.jpg"
 }
 
-bio.display = function () {
+bio.display_name = function () {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 	var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+	
+	$("#headerInfo").prepend(formattedRole);
+	$("#headerInfo").prepend(formattedName);
+	$("#header").append(formattedPic);
+	
+	
+}
+
+bio.display_contacts = function() {
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile"]);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github"]);
 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
 
-	$("#headerInfo").prepend(formattedRole);
-	$("#headerInfo").prepend(formattedName);
-	$("#header").append(formattedPic);
 	$("#topContacts").append(formattedMobile);
 	$("#topContacts").append(formattedEmail);
 	$("#topContacts").append(formattedGithub);
 	$("#topContacts").append(formattedTwitter);
 	$("#topContacts").append(formattedLocation);
+}
 
+bio.display_skills = function() {
 	if (bio.skills.length > 0) {
 		$("#header").append(HTMLskillsStart);
 		for (item in bio.skills) {
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[item]);
 			$("#skills").append(formattedSkill);
-		};
-	}
+			};
+		}
 }
 
-bio.display();
+bio.display_name();
+bio.display_contacts();
+bio.display_skills();
 
 
 var work = {
