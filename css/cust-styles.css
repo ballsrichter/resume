@@ -45,8 +45,7 @@ hr.styleHR {
 }
 
 #education {
-	padding-bottom:8px;
-	padding-top: 8px;
+	padding-top: 5px;
 }
 
 @media screen and (max-width: 991px) {
