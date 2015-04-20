@@ -12,16 +12,16 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name" class="color-primary-1 col-xs-12">%data%</h1><br id="headerBreak">';
-var HTMLheaderRole = '<h4 id="headerRole" class="color-primary-4 col-xs-12">%data%</h4><hr/>';
+var HTMLheaderName = '<h1 id="name" class="color-primary-1 col-xs-12 cust-width">%data%</h1>';
+var HTMLheaderRole = '<h4 id="headerRole" class="color-primary-4 col-xs-12 cust-width">%data%</h4><hr/>';
 
-var HTMLcontactGeneric = '<li class="col-xs-12"><span class="color-primary-2">%contact%</span><span class="color-primary-5">%data%</span></li>';
-var HTMLmobile = '<li class="col-xs-12"><span class="color-primary-2">mobile</span><span class="color-primary-5">%data%</span></li>';
-var HTMLemail = '<li class="col-xs-12"><span class="color-primary-2">email</span><span class="color-primary-5">%data%</span></li>';
-var HTMLtwitter = '<li class="col-xs-12"><span class="color-primary-2">twitter</span><span class="color-primary-5">%data%</span></li>';
-var HTMLgithub = '<li class="col-xs-12"><span class="color-primary-2">github</span><span class="color-primary-5">%data%</span></li>';
-var HTMLblog = '<li class="col-xs-12"><span class="color-primary-2">blog</span><span class="color-primary-5">%data%</span></li>';
-var HTMLlocation = '<li class="col-xs-12"><span class="color-primary-2">location</span><span class="color-primary-5">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="col-xs-12 cust-width"><span class="color-primary-2">%contact%</span><span class="color-primary-5">%data%</span></li>';
+var HTMLmobile = '<li class="col-xs-12 cust-width"><span class="color-primary-2">mobile</span><span class="color-primary-5">%data%</span></li>';
+var HTMLemail = '<li class="col-xs-12 cust-width"><span class="color-primary-2">email</span><span class="color-primary-5">%data%</span></li>';
+var HTMLtwitter = '<li class="col-xs-12 cust-width"><span class="color-primary-2">twitter</span><span class="color-primary-5">%data%</span></li>';
+var HTMLgithub = '<li class="col-xs-12 cust-width"><span class="color-primary-2">github</span><span class="color-primary-5">%data%</span></li>';
+var HTMLblog = '<li class="col-xs-12 cust-width"><span class="color-primary-2">blog</span><span class="color-primary-5">%data%</span></li>';
+var HTMLlocation = '<li class="col-xs-12 cust-width"><span class="color-primary-2">location</span><span class="color-primary-5">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic img-responsive">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
