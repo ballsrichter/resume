@@ -131,11 +131,12 @@ projects.display = function() {
 		$(".project-entry:last").append(formattedTitle);
 		$(".project-entry:last").append(formattedDates);
 		$(".project-entry:last").append(formattedDescription);
+		$(".project-entry:last").append(HTMLprojectImageContainer);
 
 		if (projects.projects[project].images.length > 0) {
 			for (item in (projects.projects[project].images)) {
 				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[item]);
-				$(".project-entry:last").append(formattedImage);
+				$(".image-container:last").append(formattedImage);
 			}
 		}
 	}
@@ -149,7 +150,7 @@ var education = {
         {
             "name": "New College of Florida",
             "degree": "Bachelor of the Arts",
-            "location": "Sarasota",
+            "location": "Sarasota, Florida",
             "major": [
                 "Natural Sciences"
             ],
@@ -209,7 +210,7 @@ education.display = function () {
 		}
 		if (education.schools[school].minor.length > 0) {
 			for (item in education.schools[school].minor) {
-				var schoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major[item]);
+				var schoolMinor = HTMLschoolMinor.replace("%data%", education.schools[school].minor[item]);
 				$(".education-entry:last").append(schoolMajor);
 			}
 		}		
@@ -227,8 +228,10 @@ education.display = function () {
 		$(".education-entry:last").append(schoolTitle);
 		$(".education-entry:last").append(onlineDates);
 		$(".education-entry:last").append(onlineURL);
-
+		$(".education-entry:last").append(HTMLonlineHR);
 	}
+	$("div > hr").last().remove(); // The loop inserts an HR tag AFTER each entry. This jQuery selector removes the final HR so that they are only between two entries
+	$("#education").append("<br>");
 }
 
 education.display();

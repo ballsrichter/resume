@@ -1,32 +1,22 @@
 /*
-
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
+These are HTML strings.
 */
 
-
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
 var HTMLheaderName = '<h1 id="name" class="color-primary-1 col-xs-12 cust-width">%data%</h1>';
 var HTMLheaderRole = '<h4 id="headerRole" class="color-primary-4 col-xs-12 cust-width">%data%</h4><hr/>';
 
 var HTMLcontactGeneric = '<li class="col-xs-12 cust-width"><span class="color-primary-2">%contact%</span><span class="color-primary-5">%data%</span></li>';
-var HTMLmobile = '<li class="col-xs-12 cust-width"><span class="color-primary-2">mobile</span><span class="color-primary-5">%data%</span></li>';
-var HTMLemail = '<li class="col-xs-12 cust-width"><span class="color-primary-2">email</span><span class="color-primary-5">%data%</span></li>';
-var HTMLtwitter = '<li class="col-xs-12 cust-width"><span class="color-primary-2">twitter</span><span class="color-primary-5">%data%</span></li>';
-var HTMLgithub = '<li class="col-xs-12 cust-width"><span class="color-primary-2">github</span><span class="color-primary-5">%data%</span></li>';
-var HTMLblog = '<li class="col-xs-12 cust-width"><span class="color-primary-2">blog</span><span class="color-primary-5">%data%</span></li>';
-var HTMLlocation = '<li class="col-xs-12 cust-width"><span class="color-primary-2">location</span><span class="color-primary-5">%data%</span></li>';
+var HTMLmobile = '<li class="col-xs-12 cust-width"><span class="color-primary-1">mobile</span><span class="color-primary-5">%data%</span></li>';
+var HTMLemail = '<li class="col-xs-12 cust-width"><span class="color-primary-1">email</span><span class="color-primary-5">%data%</span></li>';
+var HTMLtwitter = '<li class="col-xs-12 cust-width"><span class="color-primary-1">twitter</span><span class="color-primary-5">%data%</span></li>';
+var HTMLgithub = '<li class="col-xs-12 cust-width"><span class="color-primary-1">github</span><span class="color-primary-5">%data%</span></li>';
+var HTMLblog = '<li class="col-xs-12 cust-width"><span class="color-primary-1">blog</span><span class="color-primary-5">%data%</span></li>';
+var HTMLlocation = '<li class="col-xs-12 cust-width"><span class="color-primary-1">location</span><span class="color-primary-5">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic img-responsive">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="row"></ul>';
+var HTMLskillsStart = '<h3 id="skillsH3" class="color-primary-1">Skills at a Glance:</h3><ul id="skills" class="row"></ul>';
 var HTMLskills = '<li class="col-xs-4"><span class="color-primary-5">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
@@ -40,7 +30,8 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#data#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img class="img-responsive" src="%data%">';
+var HTMLprojectImage = '<img class="img-responsive col-lg-4 col-md-4" src="%data%">';
+var HTMLprojectImageContainer = '<div class="row image-container"></div>'
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -48,12 +39,15 @@ var HTMLschoolDegree = ' - %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolMinor = '<em><br>Minor(s): %data%</em>';
+
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#data#">%data%</a><hr class="styleHR">';
+var HTMLonlineURL = '<br><a href="#data#">%data%</a>';
+var HTMLonlineHR = '<hr class="styleHR">'
 
 var googleMap = '<div id="map"></div>';
 
