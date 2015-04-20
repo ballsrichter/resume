@@ -13,7 +13,7 @@ var bio = {
 	"skills": [
 		"HTML", "CSS", "Bootstrap","Javascript", "jQuery", "AJAX"
 	],
-	"biopic": "images/fry.jpg"
+	"biopic": "images/me2.jpg"
 }
 
 bio.display = function () {

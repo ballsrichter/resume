@@ -13,7 +13,7 @@ var HTMLgithub = '<li class="col-xs-12 cust-width"><span class="color-primary-1"
 var HTMLblog = '<li class="col-xs-12 cust-width"><span class="color-primary-1">blog</span><span class="color-primary-5">%data%</span></li>';
 var HTMLlocation = '<li class="col-xs-12 cust-width"><span class="color-primary-1">location</span><span class="color-primary-5">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic img-responsive">';
+var HTMLbioPic = '<img src="%data%" class="biopic img-responsive img-circle">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skillsH3" class="color-primary-1">Skills at a Glance:</h3><ul id="skills" class="row"></ul>';
