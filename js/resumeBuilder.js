@@ -200,7 +200,7 @@ var education = {
 
 education.display = function () {
 	for (school in education.schools) {
-		var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("#data#", education.schools[school].url);
 		var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 		var schoolHeader = schoolName + schoolDegree;
 		var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);

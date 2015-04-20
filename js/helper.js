@@ -34,7 +34,7 @@ var HTMLprojectImage = '<img class="img-responsive col-lg-4 col-md-4" src="%data
 var HTMLprojectImageContainer = '<div class="row image-container"></div>'
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a href="#data#">%data%';
 var HTMLschoolDegree = ' - %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
@@ -43,7 +43,7 @@ var HTMLschoolMinor = '<em><br>Minor(s): %data%</em>';
 
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineTitle = '<a class="not-active" href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#data#">%data%</a>';
